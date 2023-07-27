@@ -174,6 +174,7 @@ void selecao() // Escolha de função
     printf("2 - Encriptar\n");
     printf("3 - Desencriptar\n");
     scanf("%d", &escolha);
+    getchar();
     if (escolha == 1)
     {
         gerar();
@@ -181,7 +182,6 @@ void selecao() // Escolha de função
     else if (escolha == 2)
     {
         printf("Digite a frase que voce quer criptografar: ");
-        scanf("%c", &palavra[0]);
         frase(palavra);
     }
     else if (escolha == 3)
