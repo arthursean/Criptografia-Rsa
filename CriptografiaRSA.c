@@ -106,12 +106,7 @@ int criptografar(char palavra[], int cont, int i, int e, int n, int convertido[]
     }
     else
     {
-        if (palavra[cont] == ' ')
-        {
-            convertido[cont] = 28;
-            return criptografar(palavra, cont + 1, i, e, n, convertido);
-        }
-        convertido[cont] = toupper(palavra[cont]) - 63;
+        convertido[cont] = palavra[cont];
         return criptografar(palavra, cont + 1, i, e, n, convertido);
     }
 }
@@ -162,14 +157,7 @@ void descriptografar(int d, int n) // Desencriptar a mensagem encriptada
     {
         char letra;
         i = exp_mod_rapida(i, d, n);
-        if (i == 28)
-        {
-            letra = ' ';
-        }
-        else
-        {
-            letra = i + 63;
-        }
+        letra = i;
         fprintf(arquivo, "%c", letra);
         fscanf(file, "%d", &i);
     }
@@ -214,7 +202,7 @@ int main()
 {
     printf("-----------------------------------\n");
     printf("|      Bem vindo ao projeto de    |\n");
-    printf("|         Criptografia RSA         |\n");
+    printf("|         Criptografia RSA        |\n");
     printf("-----------------------------------\n");
     printf("\n");
     printf("Para comecar, escolha a opcao desejada:\n");
